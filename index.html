@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iPhone 16 Pro Max Customizer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="iphone-frame">
+            <div class="dynamic-island"></div>
+            <div class="screen" id="screen">
+                <div class="status-bar">
+                    <span>9:41</span>
+                    <span>📶 100%</span>
+                </div>
+                <div class="app-grid" id="appGrid">
+                    <!-- Apps will be dynamically inserted here -->
+                </div>
+            </div>
+        </div>
+
+        <div class="controls-panel">
+            <div class="app-creator">
+                <h3>Add New App</h3>
+                <div class="app-creator-form">
+                    <div class="input-group">
+                        <label for="appName">App Name:</label>
+                        <input type="text" id="appName" placeholder="Enter app name" maxlength="12">
+                    </div>
+                    <div class="input-group">
+                        <label>App Icon Style:</label>
+                        <div class="icon-style-options">
+                            <button class="icon-style-option selected" data-style="color">
+                                Color
+                            </button>
+                            <button class="icon-style-option" data-style="image">
+                                Image
+                            </button>
+                        </div>
+                    </div>
+                    <div class="input-group" id="iconColorGroup">
+                        <label for="iconColor">Icon Color:</label>
+                        <input type="color" id="iconColor" value="#007AFF">
+                    </div>
+                    <div class="input-group" id="iconImageGroup" style="display: none;">
+                        <label for="iconImage">Icon Image:</label>
+                        <input type="file" id="iconImage" accept="image/*">
+                    </div>
+                    <button id="addAppButton">Add App</button>
+                </div>
+            </div>
+
+            <div class="customizer" id="customizer" style="display: none;">
+                <h3>Customize App</h3>
+                <div class="color-picker">
+                    <label for="colorPicker">Choose Color:</label>
+                    <input type="color" id="colorPicker">
+                </div>
+                <div class="image-upload">
+                    <label for="imageUpload">Upload Custom Icon:</label>
+                    <input type="file" id="imageUpload" accept="image/*">
+                </div>
+                <button id="resetButton">Reset to Default</button>
+                <button id="closeButton">Close</button>
+            </div>
+
+            <div class="background-customizer">
+                <h3>Customize Background</h3>
+                <div class="color-picker">
+                    <label for="bgColorPicker">Background Color:</label>
+                    <input type="color" id="bgColorPicker" value="#1c1c1e">
+                </div>
+                <div class="image-upload">
+                    <label for="bgImageUpload">Upload Background Image:</label>
+                    <input type="file" id="bgImageUpload" accept="image/*">
+                </div>
+                <button id="resetBgButton">Reset Background</button>
+            </div>
+
+            <div class="widget-selector">
+                <h3>Add Widgets</h3>
+                <div class="widget-categories">
+                    <select id="widgetCategory">
+                        <option value="weather">Weather</option>
+                        <option value="calendar">Calendar</option>
+                        <option value="clock">Clock</option>
+                        <option value="stocks">Stocks</option>
+                        <option value="photos">Photos</option>
+                        <option value="music">Music</option>
+                        <option value="battery">Battery</option>
+                        <option value="fitness">Fitness</option>
+                    </select>
+                </div>
+                <div class="widget-sizes">
+                    <h4>Widget Size</h4>
+                    <div class="size-options">
+                        <button class="size-option" data-size="small">
+                            Small
+                            <span class="size-preview">1×1</span>
+                        </button>
+                        <button class="size-option" data-size="medium">
+                            Medium
+                            <span class="size-preview">2×1</span>
+                        </button>
+                        <button class="size-option" data-size="large">
+                            Large
+                            <span class="size-preview">2×2</span>
+                        </button>
+                    </div>
+                </div>
+                <button id="addWidgetButton">Add Widget</button>
+            </div>
+
+            <div class="widget-customizer" id="widgetCustomizer" style="display: none;">
+                <h3>Customize Widget</h3>
+                <div class="widget-style-options">
+                    <label for="widgetStyle">Style:</label>
+                    <select id="widgetStyle">
+                        <option value="light">Light</option>
+                        <option value="dark">Dark</option>
+                        <option value="transparent">Transparent</option>
+                    </select>
+                </div>
+                <div class="widget-image-options">
+                    <label for="widgetImage">Background Image:</label>
+                    <input type="file" id="widgetImage" accept="image/*">
+                    <div class="image-position-controls" style="display: none;">
+                        <div class="control-group">
+                            <label>Image Position:</label>
+                            <div class="position-grid">
+                                <button class="position-button" data-position="top left">↖</button>
+                                <button class="position-button" data-position="top center">↑</button>
+                                <button class="position-button" data-position="top right">↗</button>
+                                <button class="position-button" data-position="center left">←</button>
+                                <button class="position-button" data-position="center center">•</button>
+                                <button class="position-button" data-position="center right">→</button>
+                                <button class="position-button" data-position="bottom left">↙</button>
+                                <button class="position-button" data-position="bottom center">↓</button>
+                                <button class="position-button" data-position="bottom right">↘</button>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label for="imageScale">Image Scale:</label>
+                            <input type="range" id="imageScale" min="100" max="200" value="100">
+                            <span class="scale-value">100%</span>
+                        </div>
+                    </div>
+                    <button id="removeWidgetImage" style="display: none;">Remove Image</button>
+                </div>
+                <div class="widget-content-options">
+                    <!-- Dynamic content options will be inserted here based on widget type -->
+                </div>
+                <button id="saveWidgetButton">Save Changes</button>
+                <button id="closeWidgetButton">Close</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
