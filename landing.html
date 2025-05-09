@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iWidget - Customize Your iPhone Experience</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .nav-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            transition: background-color 0.2s;
+        }
+
+        .nav-link:hover {
+            background-color: rgba(0, 0, 0, 0.05);
+        }
+
+        .nav-link.active {
+            background-color: #007AFF;
+            color: white;
+        }
+
+        .hero-section {
+            margin-top: 80px;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .hero-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .hero-title {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .hero-description {
+            font-size: 1.2rem;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #007AFF;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.2s;
+        }
+
+        .cta-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav-bar">
+        <a href="landing.html" class="nav-link active">What is iWidget?</a>
+        <a href="index.html" class="nav-link">Customizer</a>
+    </nav>
+
+    <div class="hero-section">
+        <img src="iWIdgetHeroImg.png" alt="iWidget Hero Image" class="hero-image">
+        <div class="hero-content">
+            <h1 class="hero-title">Welcome to iWidget</h1>
+            <p class="hero-description">
+                iWidget is your ultimate iPhone customization tool that lets you create and manage your perfect home screen setup. 
+                With our intuitive interface, you can add custom apps, create beautiful widgets, and personalize your iPhone's 
+                appearance to match your style. Whether you're looking to organize your apps, add useful widgets, or create a 
+                unique look, iWidget makes it easy and fun to customize your iPhone experience.
+            </p>
+            <a href="index.html" class="cta-button">Start Customizing</a>
+        </div>
+    </div>
+</body>
+</html> 

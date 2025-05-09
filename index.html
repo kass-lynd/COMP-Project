@@ -5,8 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>iPhone 16 Pro Max Customizer</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .nav-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            transition: background-color 0.2s;
+        }
+
+        .nav-link:hover {
+            background-color: rgba(0, 0, 0, 0.05);
+        }
+
+        .nav-link.active {
+            background-color: #007AFF;
+            color: white;
+        }
+
+        .container {
+            margin-top: 80px;
+        }
+    </style>
 </head>
 <body>
+    <nav class="nav-bar">
+        <a href="landing.html" class="nav-link">What is iWidget?</a>
+        <a href="index.html" class="nav-link active">Customizer</a>
+    </nav>
+
     <div class="container">
         <div class="iphone-frame">
             <div class="dynamic-island"></div>
