@@ -185,6 +185,7 @@ function renderApps() {
 function deleteApp(appId) {
     apps = apps.filter(app => app.id !== appId);
     renderApps();
+    renderWidgets();
 }
 
 function handleDragStart(e) {
@@ -746,7 +747,7 @@ document.getElementById('addAppButton').addEventListener('click', () => {
             newApp.image = e.target.result;
             apps.push(newApp);
             renderApps();
-            
+            renderWidgets();
             // Reset form
             document.getElementById('appName').value = '';
             document.getElementById('iconColor').value = '#007AFF';
@@ -758,7 +759,7 @@ document.getElementById('addAppButton').addEventListener('click', () => {
 
     apps.push(newApp);
     renderApps();
-    
+    renderWidgets();
     // Reset form
     document.getElementById('appName').value = '';
     document.getElementById('iconColor').value = '#007AFF';
@@ -832,4 +833,22 @@ function toggleEditMode() {
 // Load saved apps on page load
 window.addEventListener('load', () => {
     apps.forEach(app => createAppIcon(app));
-}); 
+});
+
+// Export button logic
+const exportButton = document.getElementById('exportButton');
+if (exportButton) {
+    exportButton.addEventListener('click', () => {
+        // Hide the export button while capturing
+        exportButton.style.visibility = 'hidden';
+        html2canvas(document.querySelector('.iphone-frame')).then(canvas => {
+            // Restore the export button
+            exportButton.style.visibility = 'visible';
+            // Create a link to download the image
+            const link = document.createElement('a');
+            link.download = 'iWidget-screen.png';
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+        });
+    });
+} 
