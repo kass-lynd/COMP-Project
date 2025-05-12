@@ -8,16 +8,108 @@
 body {
     background-color: #f0f0f0;
     min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+/* navbar */
+.nav-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 1rem 2rem;
     display: flex;
     justify-content: center;
-    align-items: center;
+    gap: 2rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
 }
+
+.nav-link {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    transition: background-color 0.2s;
+}
+
+.nav-link:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.nav-link.active {
+    background-color: black;
+    color: white;
+}
+
+.nav-container {
+    margin-top: 80px;
+}
+
+/* landing-page style */
+
+.hero-section {
+    margin-top: 80px;
+    text-align: center;
+    padding: 2rem;
+}
+
+.hero-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.hero-title {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.hero-description {
+    font-size: 1.2rem;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #000;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+.cta-button:hover {
+    background-color: #333;
+}
+
+/*end*/
 
 .container {
     display: flex;
     gap: 2rem;
     padding: 20px;
     align-items: flex-start;
+    margin-top: 80px;
+    justify-content: center;
 }
 
 .iphone-frame {
@@ -39,7 +131,7 @@ body {
     height: 35px;
     background-color: #000;
     border-radius: 20px;
-    z-index: 2;
+    z-index: 11;
 }
 
 .screen {
@@ -239,12 +331,14 @@ body {
 }
 
 .size-options {
+    color: grey;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
 }
 
 .size-option {
+    color: grey;
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 8px;
@@ -262,6 +356,7 @@ body {
 }
 
 .size-option.selected {
+    color: #007AFF;
     border-color: #007AFF;
     background-color: #f0f7ff;
 }
@@ -439,21 +534,19 @@ button:hover {
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: grey;
     color: white;
     padding: 10px 20px;
     border-radius: 20px;
     cursor: pointer;
     z-index: 10;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    border: 1px solid white;
     font-size: 14px;
     width: auto;
 }
 
 .edit-mode-button:hover {
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: grey;
 }
 
 /* Add these new styles after the existing styles */
@@ -497,12 +590,14 @@ button:hover {
 }
 
 .icon-style-options {
+    color: grey;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 10px;
 }
 
 .icon-style-option {
+    color: grey;
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 8px;
