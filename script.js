@@ -839,11 +839,19 @@ window.addEventListener('load', () => {
 const exportButton = document.getElementById('exportButton');
 if (exportButton) {
     exportButton.addEventListener('click', () => {
-        // Hide the export button while capturing
+        // Hide the export button and edit mode button while capturing
         exportButton.style.visibility = 'hidden';
+        const editModeButton = document.querySelector('.edit-mode-button');
+        if (editModeButton) {
+            editModeButton.style.visibility = 'hidden';
+        }
+        
         html2canvas(document.querySelector('.iphone-frame')).then(canvas => {
-            // Restore the export button
+            // Restore the export button and edit mode button
             exportButton.style.visibility = 'visible';
+            if (editModeButton) {
+                editModeButton.style.visibility = 'visible';
+            }
             // Create a link to download the image
             const link = document.createElement('a');
             link.download = 'iWidget-screen.png';
